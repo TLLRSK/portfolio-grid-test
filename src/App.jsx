@@ -19,7 +19,7 @@ function App() {
     return onProject.onProject && onProject.projectName !== path ? 'display-none' : 'ok';
   }
   
-  const GridItem = ({ path, title, showProject }) => (
+  const GridItem = ({ path, title }) => (
     <Link
       to={path}
       className={`grid-item ${displaySelectedItem(title)}`}>
@@ -35,8 +35,7 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(onProject);
-    setProject();
+    return setProject();
   },[pathname])
 
   return (
@@ -51,11 +50,3 @@ function App() {
 }
 
 export default App;
-
-
- // <Link
-    //   to={path}
-    //   className={`grid-item ${displaySelectedItem(title)}`}
-    //   onClick={() => showProject(title)}>
-    //     {title}
-    // </Link>
